@@ -1,0 +1,20 @@
+{
+  "skip_files": [
+    "lib/phx_partner/application.ex",
+    "lib/phx_partner/release.ex",
+    "lib/phx_partner/telemetry.ex",
+    "lib/phx_partner/repo.ex",
+    "lib/phx_partner_web.ex",
+    "lib/phx_partner_web/views/*",
+    "lib/phx_partner_web/telemetry.ex",
+    "lib/phx_partner_web/endpoint.ex",
+    "lib/phx_partner_web/channels/user_socket.ex",
+    "test/support/channel_case.ex",
+    "test/support/*"
+  ],
+  "coverage_options": {
+    "treat_no_relevant_lines_as_covered": true,
+    "output_dir": "cover/",
+    "minimum_coverage": 75
+  }
+}
