@@ -1,15 +1,14 @@
-FROM elixir:1.12-alpine AS build
+FROM elixir:1.13.3-alpine
 
-RUN apk update \
-    && apk add --no-cache tzdata ncurses-libs postgresql-client build-base openssh-client \
-    && apk del tzdata
+WORKDIR /app
 
-WORKDIR /phx_partner
+RUN mix local.hex --force && \
+    mix local.rebar --force
 
-RUN mix local.hex --force && mix local.rebar --force
+COPY . .
 
-COPY mix.exs mix.lock ./
-COPY config config
+RUN mix do deps.get, deps.compile
 
-COPY . ./
-RUN mix do compile --warnings-as-errors, release
+COPY start.sh ./
+
+CMD ["sh", "./start.sh"]
