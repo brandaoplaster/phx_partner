@@ -10,6 +10,7 @@ defmodule PhxPartner.Application do
     children = [
       # Start the Ecto repository
       PhxPartner.Repo,
+      {Oban, Application.fetch_env!(:phx_partner, Oban)},
       # Start the Telemetry supervisor
       PhxPartnerWeb.Telemetry,
       # Start the PubSub system

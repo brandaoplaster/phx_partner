@@ -54,7 +54,8 @@ defmodule PhxPartner.MixProject do
       {:plug_cowboy, "~> 2.5"},
       {:credo, "~> 1.6", only: [:dev, :test], runtime: false},
       {:excoveralls, "~> 0.14.4", only: :test},
-      {:sobelow, "~> 0.11.1", only: :dev}
+      {:sobelow, "~> 0.11.1", only: :dev},
+      {:oban, "~> 2.11.2"}
     ]
   end
 

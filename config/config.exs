@@ -11,6 +11,10 @@ config :phx_partner,
   ecto_repos: [PhxPartner.Repo],
   generators: [binary_id: true]
 
+config :phx_partner, Oban,
+  repo: PhxPartner.Repo,
+  queues: [default: 10]
+
 # Configures the endpoint
 config :phx_partner, PhxPartnerWeb.Endpoint,
   url: [host: "localhost"],
